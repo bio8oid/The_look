@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>New Look - TASK</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- // ==== HEADER ==== \\ -->
+
+        <div class="header">
+            <h1>Chosen for you</h1>
+            <h2>We think you will love these</h2>
+        </div>
+
+        <!-- // ==== SEARCH PRODUCTS ==== \\ -->
+
+        <div class="form">
+            <div class="search">
+                <form id="search-form">
+                    <label for="title-search">search&nbsp;by</label>
+                    <input id="search-input" placeholder="title" type="text" />
+                    <input class="submit" type="submit" />
+                </form>
+            </div>
+
+            <div class="select">
+                <label for="price-range">price-&nbsp;range</label>
+                <select onchange="priceRange(value)" class="select-price" name="price" id="price" aria-label="price">
+                    <option value="0-10-range">0-10</option>
+                    <option value="10-20-range">10-20</option>
+                    <option value="20-40-range">20-40</option>
+                    <option value="40-100-range">40-100</option>
+                </select>
+            </div>
+
+            <div class="filter">
+                <form id="type-form">
+                    <label for="product-type">product&nbsp;type</label>
+                    <input id="type-input" placeholder="jeans" data="productType" type="text" />
+                    <input class="submit" type="submit" />
+                </form>
+            </div>
+        </div>
+
+        <!-- // ==== CAROUSEL ==== \\ -->
+
+        <div id="carousel-wrapper">
+            <div class="carousel" id="results"></div>
+            <div class="" id="popup-results"></div>
+        </div>
+
+        <div class="footer-logo">
+            <a href="https://github.com/bio8oid" target="_blank" rel="noopener">bio8oid © 2021</a>
+        </div>
+
+    </div>
+
+
+    <!-- Mustache Carousel Template -->
+
+    <script id="template-cell-list" type="x-tmpl-mustache">
+
+        <div class="carousel-cell-wrapper">
+            <div id="{{{imageSrc}}}" data="{{index}}"  class="cell-image" style="background-image: url({{{imageSrc}}}); "></div>
+            <div class="cell-text-container">
+                <h3>{{productTitle}}</h3>
+                <p>£ {{{price}}}</p>
+            </div>
+        </div>
+
+	</script>
+
+    <!-- Mustache Product POPUP Template -->
+
+    <script id="template-popup" type="x-tmpl-mustache">
+
+        <div class="overlay" id="overlay">
+    
+            <div class="popup-container" id="description">
+                <button id="button-close" >&#x2715</button>
+                <div class="pop-cell-wrapper popup-styles">
+                        
+                    <a href="{{{productUrl}}}" target="_blank">
+                        <div class="cell-image-and-link-wrapper" >
+                            <div  class="cell-image" style="background-image: url({{{imageSrc}}}); "></div>
+                            <a class="go-to-product"href="{{{productUrl}}}" target="_blank">Go to Poduct</a>
+                        </div>
+                    </a>
+
+                    <div class="cell-text-container">
+                        <h3>{{productTitle}}</h3>
+                        <p class="price">£ {{{price}}}</p>
+                        <p>Description</p>
+                        <span>Spicy jalapeno bacon ipsum dolor amet boudin hamburger kielbasa burgdoggen ham hock buffalo capicola jowl. 
+                        Picanha meatball ground round filet mignon, pork chop pork loin spare ribs shank ham sirloin beef pancetta.
+                        Alcatra ham ground round pastrami sirloin chicken jerky bacon shankle tenderloin burgdoggen salami.
+                        Short ribs swine fatback, jowl turducken strip steak andouille.
+                        Corned beef meatloaf pork chop chicken ground round fatback tail.
+                        Pig pork belly flank venison.</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+    </script>
+
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/data.js"></script>
+</body>
+
+</html>

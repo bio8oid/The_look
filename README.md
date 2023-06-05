@@ -1,1 +1,3 @@
-[view](https://bio8oid.github.io/task_look/)
+Recruitment Task
+
+[DEMO](the-look-task.netlify.app)

@@ -1,3 +1,3 @@
 Recruitment Task
 
-[DEMO](the-look-task.netlify.app)
+[DEMO](https://the-look-task.netlify.app/)

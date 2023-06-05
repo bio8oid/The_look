@@ -93,7 +93,6 @@ const updateContent = (content) => {
     const flkty = new Flickity(elem, {
         cellAlign: 'center',
         pageDots: true,
-        contain: true,
     });
 
     // ==== POPUP HANDLE ==== \\
